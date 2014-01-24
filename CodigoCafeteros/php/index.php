@@ -38,7 +38,7 @@
 
   <body>
 
-      <a href="/Imagenes/logo_tu_cafe_online.png"></a>
+    <a href="./img/logo_tu_cafe_online.png"></a>
 
     <div class="container">
 
