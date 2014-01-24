@@ -35,5 +35,8 @@ Bibliografía
 
 [1]: http://stackoverflow.com/questions/1687262/link-to-github-issue-number-with-commit-message
 
-
+SOCIAL
+======
+Email: cafeteroscocoroco@gmail.com
+Twitter: @cafeterosIV
 
