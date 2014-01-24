@@ -17,7 +17,7 @@ El objetivo de este proyecto es facilitar la supervisión remota de máquinas de
 
 - Antonio Ángel Guirola Vicente [@antonioguirola](https://github.com/antonioguirola)
 
-- Sergio Muñoz Gamarra [@sergiomgamarra](https://github.com/)
+- Sergio Muñoz Gamarra [@sergiomgamarra](https://github.com/sergiomgamarra)
 
 - Francisco Ruíz López [@elmendacorp](https://github.com/elmendacorp)
 
