@@ -37,11 +37,9 @@
   </head>
 
   <body>
-     <div class="container">
 
       <a href="/Imagenes/logo_tu_cafe_online.png"></a>
 
-    </div>
     <div class="container">
 
       <form class="form-signin" role="form">
