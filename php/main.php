@@ -78,7 +78,7 @@
   </ul>
 
 
-  <div class="panel panel-success">
+  <div class="panel panel-success container-sm">
 
     <div class="panel-heading">
       <h3 class="panel-title">Código Máquina 1</h3>
@@ -89,7 +89,7 @@
     </div>
   </div>
 
-  <div class="panel panel-warning">
+  <div class="panel panel-warning container-sm">
     <div class="panel-heading">
       <h3 class="panel-title">Código Máquina 2</h3>
     </div>
@@ -100,7 +100,7 @@
     
   </div>
 
-  <div class="panel panel-danger">
+  <div class="panel panel-danger container-sm">
     <div class="panel-heading">
       <h3 class="panel-title">Código Máquina 3</h3>
     </div>
