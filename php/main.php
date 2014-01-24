@@ -9,10 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Cafeteros">
+    <link rel="shortcut icon" href="./img/favicon.ico" />
     <!-- <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png"> -->
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Cafeteros v 1.0</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
