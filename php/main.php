@@ -71,19 +71,36 @@
   </nav>
 
   <div class="panel panel-success">
-    Aquí primera máquina de café.
-    En esta máquina todo esta OK. VERDE.
 
+    <div class="panel-heading">
+      <h3 class="panel-title">Código Máquina 1</h3>
+    </div>
+    <div class="panel-body">
+      Aquí primera máquina de café.
+      En esta máquina todo esta OK. VERDE.
+    </div>
   </div>
 
   <div class="panel panel-warning">
-    Aquí segunda máquina de café.
-    En esta máquina hay algo que revisar. AMARILLO.
+    <div class="panel-heading">
+      <h3 class="panel-title">Código Máquina 2</h3>
+    </div>
+    <div class="panel-body">
+      Aquí segunda máquina de café.
+      En esta máquina hay algo que revisar. AMARILLO.
+    </div>
+    
   </div>
 
   <div class="panel panel-danger">
-    Aquí tercera máquina de café.
-    En esta máquina hay algo mal. ROJO.
+    <div class="panel-heading">
+      <h3 class="panel-title">Código Máquina 3</h3>
+    </div>
+    <div class="panel-body">
+      Aquí tercera máquina de café.
+      En esta máquina hay algo mal. ROJO.
+    </div>
+   
   </div>
 
     <!-- Bootstrap core JavaScript
