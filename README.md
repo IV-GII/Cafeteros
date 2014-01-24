@@ -10,15 +10,15 @@ Descripción
 ¿Quiénes somos?
 ===============
 
-- José Miguel Colella Carbonara (@josecolella)
+- José Miguel Colella Carbonara ([@josecolella])
 
-- Javier Collado López (@javiercollado)
+- Javier Collado López ([@javiercollado])
 
-- Antonio Ángel Guirola Vicente  (@antonioguirola)
+- Antonio Ángel Guirola Vicente ([@antonioguirola])
 
-- Sergio Muñoz Gamarra (@sergiomgamarra)
+- Sergio Muñoz Gamarra ([@sergiomgamarra])
 
-- Francisco Ruíz López (@elmendacorp)
+- Francisco Ruíz López ([@elmendacorp])
 
 Herramientas
 ============
