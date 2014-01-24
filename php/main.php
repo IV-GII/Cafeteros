@@ -70,49 +70,57 @@
 
     </div><!-- /.navbar-collapse -->
   </nav>
+  <div class="container-fluid">
+    <div class="row-fluid">
 
-  <div class= "span3">
-    <ul class="nav nav-pills nav-stacked">
-      <li class="active"><a href="#">Máquina uno COD MAQUINA</a></li>
-      <li><a href="#">Máquina dos COD MAQUINA</a></li>
-      <li><a href="#">Máquina tres COD MAQUINA</a></li>
-    </ul>
-  </div>
-  
-
-  <div class= "span9">
-    <div class="panel panel-success">
-      <div class="panel-heading">
-        <h3 class="panel-title">Código Máquina 1</h3>
-      </div>
-      <div class="panel-body">
-        Aquí primera máquina de café.
-        En esta máquina todo esta OK. VERDE.
-      </div>
-    </div>
-
-    <div class="panel panel-warning">
-      <div class="panel-heading">
-        <h3 class="panel-title">Código Máquina 2</h3>
-      </div>
-      <div class="panel-body">
-        Aquí segunda máquina de café.
-        En esta máquina hay algo que revisar. AMARILLO.
+      <div class= "span3">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#">Máquina uno COD MAQUINA</a></li>
+        <li><a href="#">Máquina dos COD MAQUINA</a></li>
+        <li><a href="#">Máquina tres COD MAQUINA</a></li>
+      </ul>
       </div>
       
-    </div>
 
-    <div class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title">Código Máquina 3</h3>
+      <div class= "span9">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <h3 class="panel-title">Código Máquina 1</h3>
+          </div>
+          <div class="panel-body">
+            Aquí primera máquina de café.
+            En esta máquina todo esta OK. VERDE.
+          </div>
+        </div>
+
+        <div class="panel panel-warning">
+          <div class="panel-heading">
+            <h3 class="panel-title">Código Máquina 2</h3>
+          </div>
+          <div class="panel-body">
+            Aquí segunda máquina de café.
+            En esta máquina hay algo que revisar. AMARILLO.
+          </div>
+          
+        </div>
+
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title">Código Máquina 3</h3>
+          </div>
+          <div class="panel-body">
+            Aquí tercera máquina de café.
+            En esta máquina hay algo mal. ROJO.
+          </div>
+         
+        </div>
       </div>
-      <div class="panel-body">
-        Aquí tercera máquina de café.
-        En esta máquina hay algo mal. ROJO.
-      </div>
-     
+
     </div>
   </div>
+
+
+  
   
 
     <!-- Bootstrap core JavaScript
