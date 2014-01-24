@@ -48,7 +48,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#"><img src="./img/logo_tu_cafe_online.png"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
