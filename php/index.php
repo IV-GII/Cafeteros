@@ -1,9 +1,9 @@
 <?php
-
+  session_start();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
     <meta name="author" content="">
     <!-- <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png"> -->
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Cafeteros</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
@@ -43,13 +43,13 @@
     <div class="container">
 
       <form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">Autentificárse</h2>
         <input type="text" class="form-control" placeholder="Email address" required autofocus>
         <input type="password" class="form-control" placeholder="Password" required>
         <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
+          <input type="checkbox" value="remember-me"> Recordarme
         </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
       </form>
 
     </div> <!-- /container -->
