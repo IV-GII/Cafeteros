@@ -38,14 +38,14 @@
 
   <body>
 
-    <a href="./img/logo_tu_cafe_online.png"></a>
+    <img id="logo" href="./img/logo_tu_cafe_online.png" alt="Logo"/>
 
     <div class="container">
 
       <form class="form-signin" role="form">
         <h2 class="form-signin-heading">Autentificárse</h2>
-        <input type="text" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" required>
+        <input type="text" class="form-control" placeholder="Nombre de Usuario" required autofocus>
+        <input type="password" class="form-control" placeholder="Contraseña" required>
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Recordarme
         </label>
