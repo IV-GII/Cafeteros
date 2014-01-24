@@ -25,3 +25,15 @@ Herramientas
 
 
 
+
+
+Bibliografía
+============
+[Como enlazar mensajes a issues][1]
+
+
+
+[1]: http://stackoverflow.com/questions/1687262/link-to-github-issue-number-with-commit-message
+
+
+
