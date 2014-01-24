@@ -24,6 +24,8 @@ El objetivo de este proyecto es facilitar la supervisión remota de máquinas de
 Herramientas
 ============
 
+Se ha creado una cuenta en OpenShift, que es el PaaS que se va a usar
+para desplegar la aplicación
 
 
 
