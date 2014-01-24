@@ -70,6 +70,13 @@
     </div><!-- /.navbar-collapse -->
   </nav>
 
+  <ul class="nav nav-pills nav-stacked">
+    <li class="active"><a href="#">Máquina uno COD MAQUINA</a></li>
+    <li><a href="#">Máquina dos COD MAQUINA</a></li>
+    <li><a href="#">Máquina tres COD MAQUINA</a></li>
+  </ul>
+
+
   <div class="panel panel-success">
 
     <div class="panel-heading">
