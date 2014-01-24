@@ -25,7 +25,8 @@ Herramientas
 ============
 
 Se ha creado una cuenta en OpenShift, que es el PaaS que se va a usar
-para desplegar la aplicación
+para desplegar la aplicación.
+La dirección de la aplicación web es: [cafeteros-cocoroco.rhcloud.com](cafeteros-cocoroco.rhcloud.com)  
 
 
 
