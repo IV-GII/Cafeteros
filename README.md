@@ -11,15 +11,15 @@ El objetivo de este proyecto es facilitar la supervisión remota de máquinas de
 ¿Quiénes somos?
 ===============
 
-- José Miguel Colella Carbonara (@josecolella)
+- José Miguel Colella Carbonara [@josecolella](https://github.com/josecolella)
 
-- Javier Collado López (@javiercollado)
+- Javier Collado López [@javiercollado](https://github.com/javiercollado)
 
-- Antonio Ángel Guirola Vicente (@antonioguirola)
+- Antonio Ángel Guirola Vicente [@antonioguirola](https://github.com/antonioguirola)
 
-- Sergio Muñoz Gamarra (@sergiomgamarra)
+- Sergio Muñoz Gamarra [@sergiomgamarra](https://github.com/)
 
-- Francisco Ruíz López (@elmendacorp)
+- Francisco Ruíz López [@elmendacorp](https://github.com/elmendacorp)
 
 Herramientas
 ============
