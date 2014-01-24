@@ -48,7 +48,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><img src="./img/logo_tu_cafe_online_nav.png"></a>
+      <a class="navbar-brand" href="#">CAFETEROS</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,9 +59,8 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nombre Usuario<b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="#">Cerrar Sesión</a></li>
           </ul>
@@ -74,11 +73,11 @@
     <div class="row-fluid">
 
       <div class= "span3">
-      <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#">Máquina uno COD MAQUINA</a></li>
-        <li><a href="#">Máquina dos COD MAQUINA</a></li>
-        <li><a href="#">Máquina tres COD MAQUINA</a></li>
-      </ul>
+        <ul class="nav nav-pills nav-stacked">
+          <li class="active"><a href="#">Máquina uno COD MAQUINA</a></li>
+          <li><a href="#">Máquina dos COD MAQUINA</a></li>
+          <li><a href="#">Máquina tres COD MAQUINA</a></li>
+        </ul>
       </div>
       
 
