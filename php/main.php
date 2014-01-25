@@ -38,12 +38,6 @@
   </head>
 
   <body>
-    <?php
-      $conexion = mysql_connect("localhost","adminkVRFJrB","gDLVUniSBVss")
-        or die ("Fallo al conectar con la base de datos");
-        mysql_select_db("cafeteros")
-        or die ("Fallo al seleccionar la base datos";
-    ?>
     <nav class="navbar navbar-default" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -79,20 +73,7 @@
 
       <div class= "col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <ul class="nav nav-pills nav-stacked">
-          <?php
-            $instruccion = "select * from maquinas order by id";
-            $consulta = mysql_query($instruccion, $conexion)
-              or die fallo en la consulta;
-            $filas = mysql_num_rows($consulta);
-            if ($filas > 0)
-            {
-              for($i=0;$i<$filas;$i++)
-              {
-                $resultado = mysql_fetch_array($consulta);
-                print ("<li class> Maquina ". $resultado['id']. "</li>");
-              }
-            }
-          ?>
+     
         </ul>
       </div>
 
