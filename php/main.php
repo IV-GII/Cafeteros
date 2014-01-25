@@ -40,11 +40,13 @@
 
   <body>
     <?php
-      $conexion = mysql_connect("localhost","adminkVRFJrB","gDLVUniSBVss")
-        or die ("Fallo al conectar con la base de datos");
-        mysql_select_db("cafeteros")
-        or die ("Fallo al seleccionar la base datos";
-    ?>
+      connection = new mysqli(
+      $_ENV['localhost'],
+      $_ENV['adminkVRFJrB'],
+      $_ENV['gDLVUniSBVss'],
+      $_ENV['cafeteros'], // By default, app name == db name
+     );
+?>
     <nav class="navbar navbar-default" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
