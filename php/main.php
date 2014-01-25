@@ -40,12 +40,14 @@
 
   <body>
     <?php
-      connection = new mysqli(
-      $_ENV['localhost'],
-      $_ENV['adminkVRFJrB'],
-      $_ENV['gDLVUniSBVss'],
-      $_ENV['cafeteros'], // By default, app name == db name
-     );
+    connection = new mysqli(
+    $_ENV['OPENSHIFT_MYSQL_DB_HOST'],
+    $_ENV['OPENSHIFT_MYSQL_DB_USERNAME'],
+    $_ENV['OPENSHIFT_MYSQL_DB_PASSWORD'],
+    $_ENV['OPENSHIFT_APP_NAME'], // By default, app name == db name
+    $_ENV['OPENSHIFT_MYSQL_DB_PORT'],
+    $_ENV['OPENSHIFT_MYSQL_DB_SOCKET']
+  );
 ?>
     <nav class="navbar navbar-default" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
