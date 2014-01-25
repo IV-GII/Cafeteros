@@ -37,11 +37,8 @@
   </head>
 
   <body>
-
-    <img id="logo" href="http://www.tucafeonline.com/media/logos/default/logo_2_1.png" alt="Logo"/>
-
     <div class="container">
-
+      <img id="logo" href="img/logo_tu_cafe_online.png" alt="Logo"/>
       <form class="form-signin" role="form">
         <h2 class="form-signin-heading">Autentificárse</h2>
         <input type="text" class="form-control" placeholder="Nombre de Usuario" required autofocus>
