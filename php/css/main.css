@@ -1,4 +1,9 @@
 #logo {
   margin: 0 auto;
+
   border-image: 0px;
+}
+#imagen_sin_padding{
+	margin: 0px;
+	padding: 0px;
 }
