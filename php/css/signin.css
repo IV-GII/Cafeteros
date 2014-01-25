@@ -3,10 +3,9 @@ body {
   padding-bottom: 40px;
   background-color: #eee;
 }
-
-#logo {
+#logo{
+  vertical-align: center;
 }
-
 .form-signin {
   max-width: 330px;
   padding: 15px;
