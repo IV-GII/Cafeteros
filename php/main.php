@@ -1,5 +1,5 @@
 <?php
-
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +78,7 @@
           <li><a href="#">Máquina tres COD MAQUINA</a></li>
         </ul>
       </div>
-      
+
 
       <div class= "col-lg-9 col-md-9 col-sm-9 col-xs-12">
         <div class="panel panel-success">
@@ -99,7 +99,7 @@
             Aquí segunda máquina de café.
             En esta máquina hay algo que revisar. AMARILLO.
           </div>
-          
+
         </div>
 
         <div class="panel panel-danger">
@@ -110,15 +110,15 @@
             Aquí tercera máquina de café.
             En esta máquina hay algo mal. ROJO.
           </div>
-         
+
         </div>
       </div>
 
     </div>
   </div>
 
-  
-  
+
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
