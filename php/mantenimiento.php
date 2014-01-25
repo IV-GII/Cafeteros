@@ -102,7 +102,7 @@
           </div>
           <div class="panel-body">
             <button type="button" class="btn btn-default btn-lg">
-              <span class="glyphicon glyphicon-refresh" ></span> Reiniciar máquina
+              <span class="glyphicon glyphicon-refresh"></span> Reiniciar máquina
             </button>
 
             <button type="button" class="btn btn-default btn-lg">
