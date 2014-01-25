@@ -71,7 +71,7 @@
   <div>
     <div class="row">
 
-      <div class= "col-lg-3">
+      <div class= "col-lg-3 col-md-3 col-sm-12 col-xs-12">
         <ul class="nav nav-pills nav-stacked">
           <li class="active"><a href="#">Máquina uno COD MAQUINA</a></li>
           <li><a href="#">Máquina dos COD MAQUINA</a></li>
@@ -80,7 +80,7 @@
       </div>
       
 
-      <div class= "col-lg-9">
+      <div class= "col-lg-9 col-md-9 col-sm-12 col-xs-12">
         <div class="panel panel-success">
           <div class="panel-heading">
             <h3 class="panel-title">Código Máquina 1</h3>
