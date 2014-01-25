@@ -39,9 +39,9 @@
 
   <body>
     <?php
-      $conexion = mysql_connect("")
+      $conexion = mysql_connect("localhost","adminkVRFJrB","gDLVUniSBVss")
         or die ("Fallo al conectar con la base de datos");
-      mysql_select_db(database_name)
+        mysql_select_db("cafeteros")
         or die ("Fallo al seleccionar la base datos";
     ?>
     <nav class="navbar navbar-default" role="navigation">
@@ -89,7 +89,7 @@
               for($i=0;$i<$filas;$i++)
               {
                 $resultado = mysql_fetch_array($consulta);
-                print ("<li> Maquina ". $resultado['id']. "</li>");
+                print ("<li class> Maquina ". $resultado['id']. "</li>");
               }
             }
           ?>
