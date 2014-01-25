@@ -1,6 +1,9 @@
 import time
 import RPi.GPIO as GPIO 
 
+
+## Configuración de los pines
+
 # PIN 7 BOTON 9
 # PIN 11 BOTON 6
 # PIN 15 BOTON 5
@@ -13,6 +16,7 @@ GPIO.setup(7, GPIO.OUT) # 9
 GPIO.setup(11, GPIO.OUT) # 6
 GPIO.setup(15, GPIO.OUT) # 5
 
+## Inicio de la secuencia
 GPIO.output(boton9,True)
 time.sleep(0.5)
 GPIO.output(boton9,False)
