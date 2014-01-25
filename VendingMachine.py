@@ -50,7 +50,7 @@ class VendingMachine:
             "Nombre de Fabricante": None,
             "Modelo": None,
             "Revision del Firmware": None,
-            "Codigo de la Máquina": None,
+            "Codigo de la Maquina": None,
             "Numero de Impresion": None,
             "Contador de todos los cafes del inicio del tiempo": None,
             "Tecla": [],
@@ -95,7 +95,7 @@ class VendingMachine:
                             "Numero de Impresion"] = numeroDeImpresionRegex.group(1)
                     if codigoRegex:
                         self.identifiers[
-                            "Codigo de la Maquina"] = codigoRegex.group(1)
+                            u"Codigo de la Maquina"] = codigoRegex.group(1)
                     if contadorRegex:
                         self.identifiers[
                             "Contador de todos los cafes del inicio del tiempo"] = contadorRegex.group(1)
@@ -122,11 +122,11 @@ class VendingMachine:
                 self.identifiers["Revision del Firmware"] = cleanLine
         for i in range(len(self.pagoList)):
             self.identifiers["Tecla"].append(
-                {i: (self.pagoList[i], self.gratisList[i], self.testList[i])})
+                {i+1: (self.pagoList[i], self.gratisList[i], self.testList[i])})
         for i in range(len(self.priceList)):
-            self.identifiers["Precio"].append({i: self.priceList[i]})
+            self.identifiers["Precio"].append({i+1: self.priceList[i]})
         for i in range(len(self.errorsList)):
-            self.identifiers["Errores"].append({i: self.errorsList[i]})
+            self.identifiers["Errores"].append({i+1: self.errorsList[i]})
         return self.identifiers
 
     def saveToFile(self):
@@ -134,4 +134,8 @@ class VendingMachine:
         with open(str(date.year) + str(date.month) + str(date.day) + "-" + str(
                   date.time().hour) + str(date.time().minute) + str(date.time().second) + ".json", "w") as fo:
             json.dump(self.identifiers, fo)
+        timesFile = open("times.txt", "a")
+        timesFile.write(str(date.year) + str(date.month) + str(date.day) + "-" + str(
+                        date.time().hour) + str(date.time().minute) + str(date.time().second)+"\n")
         fo.close()
+        timesFile.close()

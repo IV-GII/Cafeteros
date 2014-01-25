@@ -13,3 +13,9 @@ los siguientes pasos:
   Esto hace que se puede acceder desde local y se forwardea a la maquina
   de openshift
   -
+
+
+
+Ejecucion del programa:
+- python3 fileparser.py captura\ 20140120\ iznalloz.txt
+- python3 fileparser.py captura\ 20140124\ cocoroco.txt
