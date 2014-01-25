@@ -15,6 +15,17 @@
     - apt: pkg=python-pip
     - apt: pkg=mysql-server
     - pip: name=pymysql
+    - pip: name=serial
+    - gem: name=rhc
+    ## GENERAR LLAVES SSH Y EXPORTARLAS
+    - name: Generar llaves ssh
+      command: ssh-keygen
+    - name: Ejecutar configuración de openshift
+      command: rhc setup
+    - name: Exportar llaves a cliente openshift
+      command: rhc sshkey-add raspi /home/pi/.ssh/id_rsa.pub
+    - name: Hacer port-forwarding para conectar a openshift
+      command: rhc port-forward -a cafeteros &
     # Descargar script con la secuencia de botones:
     #- git: repo=ssh://git@github.com/mylogin/hello.git dest=/home/pi/scripts
     # Descargar script con el script que lee de puerto serie y genera las estadísticas:
