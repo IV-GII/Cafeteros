@@ -9,10 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Cafeteros">
+    <link rel="shortcut icon" href="./img/favicon.ico" />
     <!-- <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png"> -->
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Cafeteros v 1.0</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
@@ -24,7 +25,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 
     <!-- Custom styles for this template -->
-    <link href="css/signin.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -37,44 +38,106 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" id="logo" href="#"><img id = "imagen_sin_padding" src="img/logo_tu_cafe_online_nav_peq.png"></a>
+    </div>
 
-  <nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="./img/logo_tu_cafe_online.png"> Cafeteros </a>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ><a href=".main.php">Estado</a></li>
+        <li class="active"><a href=".mantenimiento.php">Mantenimiento</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nombre Usuario<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Cerrar Sesión</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </nav>
+  <div id="contenedor_margen">
+    <div class="row">
+
+      <div class= "col-lg-3 col-md-3 col-sm-3 col-xs-12">
+        <ul class="nav nav-pills nav-stacked">
+          <li class="active"><a href="#">Máquina uno COD MAQUINA</a></li>
+          <li><a href="#">Máquina dos COD MAQUINA</a></li>
+          <li><a href="#">Máquina tres COD MAQUINA</a></li>
+        </ul>
+      </div>
+      
+
+      <div class= "col-lg-9 col-md-9 col-sm-9 col-xs-12">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <h3 class="panel-title">Código Máquina 1</h3>
+          </div>
+          <div class="panel-body">
+            <button type="button" class="btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-refresh"></span> Reiniciar máquina
+            </button>
+
+            <button type="button" class="btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-tree-deciduous"></span> Limpieza máquina
+            </button>
+          </div>
+        </div>
+
+        <div class="panel panel-warning">
+          <div class="panel-heading">
+            <h3 class="panel-title">Código Máquina 2</h3>
+          </div>
+          <div class="panel-body">
+            <button type="button" class="btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-refresh"></span> Reiniciar máquina
+            </button>
+
+            <button type="button" class="btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-tree-deciduous"></span> Limpieza máquina
+            </button>
+          </div>
+          
+        </div>
+
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title">Código Máquina 3</h3>
+          </div>
+          <div class="panel-body">
+            <button type="button" class="btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-refresh"></span> Reiniciar máquina
+            </button>
+
+            <button type="button" class="btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-tree-deciduous"></span> Limpieza máquina
+            </button>
+          </div>
+         
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="./estado.php">Estado</a></li>
-      <li><a href="./mantenimiento.php">Mantenimiento</a></li>
-    </ul>
-   
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Link</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">NOMBRE USUARIO <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Cerrar sesión</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
+  
+  
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
   </body>
 </html>
+
