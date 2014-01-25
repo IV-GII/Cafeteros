@@ -4,7 +4,7 @@ body {
   background-color: #eee;
 }
 #logo{
-  vertical-align: center;
+  margin: 0 auto;
 }
 .form-signin {
   max-width: 330px;
