@@ -38,7 +38,7 @@
 
   <body>
     <div class="container">
-      <img id= "logo" src="img/logo_tu_cafe_online.png">
+      <center><img id= "logo" src="img/logo_tu_cafe_online.png"></center>
       <form class="form-signin" role="form">
         <h2 class="form-signin-heading">Autentificárse</h2>
         <input type="text" class="form-control" placeholder="Nombre de Usuario" required autofocus>
