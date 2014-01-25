@@ -47,7 +47,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">CAFETEROS</a>
+      <a class="navbar-brand" href="#"><img src="./img/logo_tu_cafe_online_nav_peq.png"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
