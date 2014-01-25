@@ -7,3 +7,9 @@
 	margin: 0px;
 	padding: 0px;
 }
+
+#contenedor_margen{
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+}
