@@ -106,21 +106,10 @@
             </h3>
           </div>
           <div class="panel-body">
-            <?php
-              // ini_set ("display_errors","1" );
-              // error_reporting(E_ALL);
-              // require_once "conexion_mysqli.php";
-              // $lista=consultarMaquina(0);
-              // printf($lista);
-              // printf("<br>");
-              // $botones= obtenerTablaBotones(0);
-              // printf($botones);
-            ?>
-
               <div class="row">
 
                 <div class= "col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                  <div class="panel panel-success">
+                  <div class="panel panel-info">
                     <div class="panel-heading">
                       <h4 class="panel-title">
                         Información de Máquina
@@ -139,7 +128,7 @@
                 </div>
 
                 <div class= "col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                  <div class="panel panel-success">
+                  <div class="panel panel-info">
                     <div class="panel-heading">
                       <h4 class="panel-title">
                         Conteo pulsación teclas
@@ -166,13 +155,47 @@
             <h3 class="panel-title">M&aacute;quina 1</h3>
           </div>
           <div class="panel-body">
-            <?php
-              ini_set ("display_errors","1" );
-              error_reporting(E_ALL);
-              require_once "conexion_mysqli.php";
-              $lista=consultarMaquina(1);
-              printf($lista);
-            ?>
+            <div class="row">
+
+                <div class= "col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                  <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        Información de Máquina
+                      </h4>
+                    </div>
+                    <div class="panel-body">
+                      <?php
+                        ini_set ("display_errors","1" );
+                        error_reporting(E_ALL);
+                        require_once "conexion_mysqli.php";
+                        $lista=consultarMaquina(1);
+                        printf($lista);
+                      ?>
+                    </div>
+                  </div>
+                </div>
+
+                <div class= "col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                  <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        Conteo pulsación teclas
+                      </h4>
+                    </div>
+                    <div class="panel-body">
+                      <?php
+                        ini_set ("display_errors","1" );
+                        error_reporting(E_ALL);
+                        require_once "conexion_mysqli.php";
+                        $botones= obtenerTablaBotones(1);
+                        printf($botones);
+                      ?>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
           </div>
 
         </div>
@@ -182,13 +205,47 @@
             <h3 class="panel-title">Máquina 3</h3>
           </div>
           <div class="panel-body">
-            <?php
-              ini_set ("display_errors","1" );
-              error_reporting(E_ALL);
-              require_once "conexion_mysqli.php";
-              $lista=consultarMaquina(1);
-              printf($lista);
-            ?>
+            <div class="row">
+
+                <div class= "col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                  <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        Información de Máquina
+                      </h4>
+                    </div>
+                    <div class="panel-body">
+                      <?php
+                        ini_set ("display_errors","1" );
+                        error_reporting(E_ALL);
+                        require_once "conexion_mysqli.php";
+                        $lista=consultarMaquina(0);
+                        printf($lista);
+                      ?>
+                    </div>
+                  </div>
+                </div>
+
+                <div class= "col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                  <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        Conteo pulsación teclas
+                      </h4>
+                    </div>
+                    <div class="panel-body">
+                      <?php
+                        ini_set ("display_errors","1" );
+                        error_reporting(E_ALL);
+                        require_once "conexion_mysqli.php";
+                        $botones= obtenerTablaBotones(0);
+                        printf($botones);
+                      ?>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
           </div>
 
         </div>
