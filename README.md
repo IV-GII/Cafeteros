@@ -18,4 +18,5 @@ los siguientes pasos:
 
 Ejecucion del programa:
 - python3 fileparser.py captura\ 20140120\ iznalloz.txt
+- python3 fileparser.py captura\ 20140121\ tecnoszubia.txt
 - python3 fileparser.py captura\ 20140124\ cocoroco.txt
