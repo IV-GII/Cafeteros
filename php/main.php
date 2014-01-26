@@ -3,13 +3,13 @@
   ini_set ("display_errors","1" );
   error_reporting(E_ALL);
   require_once "conexion_mysqli.php";
-  // if (isset($_POST['usuario']))
-  //   $user = $_POST['usuario'];
-  // if (isset($_POST['password']))
-  //   $password= $_POST['password']; 
-  // if(consultarUsuario($user, $password)){
-  //   $_SESSION['usuario']=$user;
-  // }
+  if (isset($_POST['usuario']))
+    $user = $_POST['usuario'];
+  if (isset($_POST['password']))
+    $password= $_POST['password']; 
+  if(consultarUsuario($user, $password)){
+    $_SESSION['usuario']=$user;
+  }
 
 ?>
 
