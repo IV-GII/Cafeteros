@@ -107,14 +107,39 @@
           </div>
           <div class="panel-body">
             <?php
-              ini_set ("display_errors","1" );
-              error_reporting(E_ALL);
-              require_once "conexion_mysqli.php";
-              $lista=consultarMaquina(0);
-              printf($lista);
-              $botones= obtenerTablaBotones(0);
-              printf($botones);
+              // ini_set ("display_errors","1" );
+              // error_reporting(E_ALL);
+              // require_once "conexion_mysqli.php";
+              // $lista=consultarMaquina(0);
+              // printf($lista);
+              // printf("<br>");
+              // $botones= obtenerTablaBotones(0);
+              // printf($botones);
             ?>
+
+              <div class="row">
+
+                <div class= "col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                  <?php
+                    ini_set ("display_errors","1" );
+                    error_reporting(E_ALL);
+                    require_once "conexion_mysqli.php";
+                    $lista=consultarMaquina(0);
+                    printf($lista);
+                  ?>
+                </div>
+
+                <div class= "col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                  <?php
+                    ini_set ("display_errors","1" );
+                    error_reporting(E_ALL);
+                    require_once "conexion_mysqli.php";
+                    $botones= obtenerTablaBotones(0);
+                    printf($botones);
+                  ?>
+                </div>
+
+            </div>
           </div>
         </div>
 
