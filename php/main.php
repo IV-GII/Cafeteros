@@ -3,21 +3,19 @@
   ini_set ("display_errors","1" );
   error_reporting(E_ALL);
   require_once "conexion_mysqli.php";
-  if (isset($_POST['usuario'])){
-    $user = $_POST['usuario'];
-  }
-  if (isset($_POST['password'])){
-    $password= $_POST['password']; 
-  }
-  if(consultarUsuario($user, $password)){
-    $_SESSION['username']=$user;
-  }else{
-    printf('<div class="alert alert-danger"></div>');
-    header("Location: index.php");
-  }
-
   if(!isset($_SESSION["username"])){
-    header("Location: index.php");
+    if (isset($_POST['usuario'])){
+      $user = $_POST['usuario'];
+    }
+    if (isset($_POST['password'])){
+      $password= $_POST['password']; 
+    }
+    if(consultarUsuario($user, $password)){
+      $_SESSION['username']=$user;
+    }else{
+      printf('<div class="alert alert-danger"></div>');
+      header("Location: index.php");
+    }
   }
 
 ?>
@@ -78,12 +76,8 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> admin<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Cerrar Sesión</a></li>
-          </ul>
-        </li>
+        <li><a href="#"> <?php printf($_SESSION["username"]); ?></a></li>
+        <li><a href="cerrar_sesion.php"> Cerrar Sesión</a></li>
       </ul>
 
     </div><!-- /.navbar-collapse -->
@@ -113,12 +107,57 @@
           </div>
           <div class="panel-body">
             <?php
-              ini_set ("display_errors","1" );
-              error_reporting(E_ALL);
-              require_once "conexion_mysqli.php";
-              $lista=consultarMaquina(0);
-              printf($lista);
+              // ini_set ("display_errors","1" );
+              // error_reporting(E_ALL);
+              // require_once "conexion_mysqli.php";
+              // $lista=consultarMaquina(0);
+              // printf($lista);
+              // printf("<br>");
+              // $botones= obtenerTablaBotones(0);
+              // printf($botones);
             ?>
+
+              <div class="row">
+
+                <div class= "col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        Información de Máquina
+                      </h4>
+                    </div>
+                    <div class="panel-body">
+                      <?php
+                        ini_set ("display_errors","1" );
+                        error_reporting(E_ALL);
+                        require_once "conexion_mysqli.php";
+                        $lista=consultarMaquina(0);
+                        printf($lista);
+                      ?>
+                    </div>
+                  </div>
+                </div>
+
+                <div class= "col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        Conteo pulsación teclas
+                      </h4>
+                    </div>
+                    <div class="panel-body">
+                      <?php
+                        ini_set ("display_errors","1" );
+                        error_reporting(E_ALL);
+                        require_once "conexion_mysqli.php";
+                        $botones= obtenerTablaBotones(0);
+                        printf($botones);
+                      ?>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
           </div>
         </div>
 

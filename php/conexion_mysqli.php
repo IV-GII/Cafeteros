@@ -63,6 +63,23 @@
 		$mysqli->close();
 	}
 
+	function obtenerTablaBotones($maquina){
+		$mysqli = conectarse(); 
+		$datos=""; 
+		if ($resultado = $mysqli->query("SELECT * FROM  `Producto` WHERE  `id_maquina` =".$maquina)) {
+			while ($row = $resultado->fetch_assoc()) {
+				//$datos= $columnaIzq.'<li><a href="#">M&aacute;quina '.$row["cod_maquina"].'</a></li>';
+				$datos = $datos."Botón: ".$row["boton"]."<br>". "&nbsp;&nbsp;&nbsp;&nbsp;Pagados:".$row["pago"]."<br>". "&nbsp;&nbsp;&nbsp;&nbsp;Gratis:".$row["gratis"]."<br>". "&nbsp;&nbsp;&nbsp;&nbsp;Test:".$row["test"]."<br>";
+			}
+			return $datos;
+		}else{
+			echo "error peticion";
+			printf("Errormessage: %s\n", $mysqli->error);
+		}
+		
+		$mysqli->close();
+	}
+
 	function consultarCodigo($maquina){
 		$mysqli = conectarse(); 
 		$codigo=""; 
