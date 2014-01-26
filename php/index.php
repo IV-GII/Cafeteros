@@ -47,9 +47,6 @@
         <h2 class="form-signin-heading">Autentificación</h2>
         <input name="usuario" id="usuario" type="text" class="form-control" placeholder="Nombre de Usuario" required autofocus>
         <input name="password" id="password" type="password" class="form-control" placeholder="Contraseña" required>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Recordarme
-        </label>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
       </form>
 
