@@ -127,7 +127,7 @@
                   </div>
                 </div>
 
-                <div class= "col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <div class= "col-lg-4 col-md-4 col-sm-4 col-xs-12">
                   <div class="panel panel-info">
                     <div class="panel-heading">
                       <h4 class="panel-title">
@@ -140,6 +140,23 @@
                         error_reporting(E_ALL);
                         require_once "conexion_mysqli.php";
                         $botones= obtenerTablaBotones(0);
+                        printf($botones);
+                      ?>
+                    </div>
+                  </div>
+                <div class= "col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                  <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        Errores
+                      </h4>
+                    </div>
+                    <div class="panel-body">
+                      <?php
+                        ini_set ("display_errors","1" );
+                        error_reporting(E_ALL);
+                        require_once "conexion_mysqli.php";
+                        $botones= obtenerTablaErrores(0);
                         printf($botones);
                       ?>
                     </div>
