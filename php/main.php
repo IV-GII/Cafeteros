@@ -3,12 +3,9 @@
   ini_set ("display_errors","1" );
   error_reporting(E_ALL);
   require_once "conexion_mysqli.php";
-  echo "hola";
   if (isset($_POST['usuario']))
-    printf($_POST['usuario']);
     $user = $_POST['usuario'];
   if (isset($_POST['password']))
-    printf($_POST['password']);
     $password= $_POST['password']; 
   if(consultarUsuario($user, $password)){
     $_SESSION['usuario']=$user;
