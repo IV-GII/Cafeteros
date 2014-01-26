@@ -5,10 +5,12 @@
   require_once "conexion_mysqli.php";
   if (isset($_POST['usuario'])){
     $user = $_POST['usuario'];
-    echo 'hay usuario';
+    printf("Hay usuario");
   }
-  if (isset($_POST['password']))
+  if (isset($_POST['password'])){
+    printf("Hay usuario");
     $password= $_POST['password']; 
+  }
   if(consultarUsuario($user, $password)){
     $_SESSION['username']=$user;
   }else{
