@@ -2,9 +2,6 @@
   session_start();
   ini_set ("display_errors","1" );
   error_reporting(E_ALL);
-
-  if(empty($_SESSION['usuario']))
-    header("Location: index.php"); 
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +61,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nombre Usuario<b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">admin<b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="#">Cerrar Sesión</a></li>
           </ul>

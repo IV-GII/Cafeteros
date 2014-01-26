@@ -9,8 +9,6 @@
     $password= $_POST['password']; 
   if(consultarUsuario($user, $password)){
     $_SESSION['usuario']=$user;
-  }else{
-    header("Location: index.php"); 
   }
 
 ?>
@@ -72,7 +70,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <?php printf($_SESSION['usuario']); ?><b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> admin<b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="#">Cerrar Sesión</a></li>
           </ul>
