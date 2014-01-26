@@ -88,7 +88,7 @@ for jsonInfo in data:
 
 # Tabla de Tecla
 for jsonInfo in data:
-    for tecla, number in zip(jsonInfo["Tecla"], range(1, len(jsonInfo["Tecla"]))):
+    for tecla, number in zip(jsonInfo["Tecla"], range(1, len(jsonInfo["Tecla"])+1)):
         pago = int(tecla[str(number)][0])
         gratis = int(tecla[str(number)][1])
         test = int(tecla[str(number)][2])
