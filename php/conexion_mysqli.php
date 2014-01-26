@@ -14,7 +14,7 @@
 		return $mysqli;		
 	}
 
-	function consultarMaquinas($maquina){
+	function consultarMaquina($maquina){
 		$mysqli = conectarse(); 
 		$maquinas=""; 
 		if ($resultado = $mysqli->query("SELECT * FROM " . MAQUINAS . "WHERE cod_maquina=" . $maquina)) {

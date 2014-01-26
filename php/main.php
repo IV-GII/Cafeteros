@@ -90,8 +90,13 @@
             <h3 class="panel-title">Código Máquina 1</h3>
           </div>
           <div class="panel-body">
-            Aquí primera máquina de café.
-            En esta máquina todo esta OK. VERDE.
+            <?php
+              ini_set ("display_errors","1" );
+              error_reporting(E_ALL);
+              require_once "conexion_mysqli.php";
+              $lista=consultarMaquina();
+              printf($lista);
+            ?>
           </div>
         </div>
 
