@@ -103,13 +103,15 @@
             <h3 class="panel-title">Código Máquina 2</h3>
           </div>
           <div class="panel-body">
-            <button type="button" class="btn btn-default btn-lg">
-              <span class="glyphicon glyphicon-refresh"></span> Reiniciar máquina
-            </button>
+            <center>
+              <button type="button" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-refresh"></span> Reiniciar máquina
+              </button>
 
-            <button type="button" class="btn btn-default btn-lg">
-              <span class="glyphicon glyphicon-tree-deciduous"></span> Limpieza máquina
-            </button>
+              <button type="button" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-tree-deciduous"></span> Limpieza máquina
+              </button>
+            </center>
           </div>
           
         </div>
@@ -119,13 +121,15 @@
             <h3 class="panel-title">Código Máquina 3</h3>
           </div>
           <div class="panel-body">
-            <button type="button" class="btn btn-default btn-lg">
-              <span class="glyphicon glyphicon-refresh"></span> Reiniciar máquina
-            </button>
+            <center>
+              <button type="button" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-refresh"></span> Reiniciar máquina
+              </button>
 
-            <button type="button" class="btn btn-default btn-lg">
-              <span class="glyphicon glyphicon-tree-deciduous"></span> Limpieza máquina
-            </button>
+              <button type="button" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-tree-deciduous"></span> Limpieza máquina
+              </button>
+            </center>
           </div>
          
         </div>
