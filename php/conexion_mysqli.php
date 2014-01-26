@@ -37,7 +37,7 @@
 			while ($row = $resultado->fetch_assoc()) {
 				$columnaIzq= '<li><a href="#">M&aacute;quina '.$row["cod_maquina"].'</a></li>'.columnaIzq;
 			}
-			return $maquinas;
+			return $columnaIzq;
 		}else{
 			echo "error peticion";
 			printf("Errormessage: %s\n", $mysqli->error);
