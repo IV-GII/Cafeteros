@@ -17,7 +17,7 @@
 	function consultarMaquina($maquina){
 		$mysqli = conectarse(); 
 		$maquinas=""; 
-		if ($resultado = $mysqli->query("SELECT * FROM " . MAQUINAS . "WHERE cod_maquina=" . $maquina)) {
+		if ($resultado = $mysqli->query("SELECT * FROM " . MAQUINAS . "WHERE cod_maquina = " . $maquina)) {
 			while ($row = $resultado->fetch_assoc()) {
 				$maquinas= 'Modelo: '.$row["modelo"].'<br>Firm: '.$row["firmware"].'<br>Fabricante: '.$row["fabricante"].'<br>N&uacute;mero de cafes: '.$row["n_cafes"].'<br>Vasos totales: '.$row["vasos_totales"].'<br>Vasos mantenido: '.$row["vasos_mantenido"].'<br>N&uacute;mero impresi&oacute;n: '.$row["n_impresion"];
 			}
