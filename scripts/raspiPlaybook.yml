@@ -14,7 +14,7 @@
     ## INSTALAR DEPENDENCIAS
     - apt: pkg=python-pip
     - apt: pkg=mysql-server
-    - pip: name=pymysql
+    - pip: name=MySQLdb
     - pip: name=serial
     - gem: name=rhc
     ## GENERAR LLAVES SSH Y EXPORTARLAS
