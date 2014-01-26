@@ -19,7 +19,7 @@
 		$maquinas=""; 
 		if ($resultado = $mysqli->query("SELECT * FROM " . MAQUINAS . "WHERE cod_maquina=" . $maquina)) {
 			while ($row = $resultado->fetch_assoc()) {
-				$maquinas= 'Modelo: '.$row=["modelo"].'<br>Firm: '.$row=["firmware"].'<br>Fabricante: '.$row=["fabricante"].'<br>N&uacute;mero de cafes: '.$row=["n_cafes"].'<br>Vasos totales: '.$row=["vasos_totales"].'<br>Vasos mantenido: '.$row=["vasos_mantenido"].'<br>N&uacute;mero impresi&oacute;n: '.$row=["n_impresion"];
+				$maquinas= 'Modelo: '.$row["modelo"].'<br>Firm: '.$row["firmware"].'<br>Fabricante: '.$row["fabricante"].'<br>N&uacute;mero de cafes: '.$row["n_cafes"].'<br>Vasos totales: '.$row["vasos_totales"].'<br>Vasos mantenido: '.$row["vasos_mantenido"].'<br>N&uacute;mero impresi&oacute;n: '.$row["n_impresion"];
 			}
 			return $maquinas;
 		}else{
@@ -35,7 +35,7 @@
 		$columnaIzq=""; 
 		if ($resultado = $mysqli->query("SELECT * FROM " . MAQUINAS)) {
 			while ($row = $resultado->fetch_assoc()) {
-				$columnaIzq= '<li><a href="#">M&aacute;quina '.$row=["cod_maquina"].'</a></li>'.columnaIzq;
+				$columnaIzq= '<li><a href="#">M&aacute;quina '.$row["cod_maquina"].'</a></li>'.columnaIzq;
 			}
 			return $maquinas;
 		}else{
@@ -51,7 +51,7 @@
 		$codigo=""; 
 		if ($resultado = $mysqli->query("SELECT * FROM " . MAQUINAS . "WHERE cod_maquina=" . $maquina)) {
 			while ($row = $resultado->fetch_assoc()) {
-				$codigo= 'M&aacute;quina '.$row=["cod_maquina"];
+				$codigo= 'M&aacute;quina '.$row["cod_maquina"];
 			}
 			return $codigo;
 		}else{
