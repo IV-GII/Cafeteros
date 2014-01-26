@@ -102,7 +102,7 @@ function obtenerTablaErrores($maquina){
     if ($resultado = $mysqli->query("SELECT * FROM  `Producto` WHERE  `id_maquina` =".$maquina)) {
       while ($row = $resultado->fetch_assoc()) {
         //$datos= $columnaIzq.'<li><a href="#">M&aacute;quina '.$row["cod_maquina"].'</a></li>';
-        $datos = $datos."Error 1: ".$row["err1"]."<br>"."Error 1: ".$row["err1"]."<br>"."Error 2: ".$row["err2"]."<br>"."Error 3: ".$row["err3"]."<br>"."Error 4: ".$row["err4"]."<br>"."Error 5: ".$row["err5"]."<br>"."Error 6: ".$row["err6"]."<br>"."Error 7: ".$row["err7"]."<br>". "Error 8: ".$row["err8"]."<br>"."Error 9: ".$row["err9"]."<br>"."Error 10: ".$row["err10"]."<br>"."Error 11: ".$row["err11"]."<br>"."Error 12: ".$row["err12"]."<br>"."Error 13: ".$row["err13"]."<br>"."Error 14: ".$row["err14"]."<br>"."Error 15: ".$row["err15"]."<br>";
+        $datos = $datos."Error 1: ".$row["err1"]."<br>"."Error 2: ".$row["err2"]."<br>"."Error 3: ".$row["err3"]."<br>"."Error 4: ".$row["err4"]."<br>"."Error 5: ".$row["err5"]."<br>"."Error 6: ".$row["err6"]."<br>"."Error 7: ".$row["err7"]."<br>". "Error 8: ".$row["err8"]."<br>"."Error 9: ".$row["err9"]."<br>"."Error 10: ".$row["err10"]."<br>"."Error 11: ".$row["err11"]."<br>"."Error 12: ".$row["err12"]."<br>"."Error 13: ".$row["err13"]."<br>"."Error 14: ".$row["err14"]."<br>"."Error 15: ".$row["err15"]."<br>";
       }
       return $datos;
     }else{
