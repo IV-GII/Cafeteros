@@ -3,21 +3,21 @@
   ini_set ("display_errors","1" );
   error_reporting(E_ALL);
   require_once "conexion_mysqli.php";
-  if (isset($_POST['usuario'])){
-    $user = $_POST['usuario'];
-  }
-  if (isset($_POST['password'])){
-    $password= $_POST['password']; 
-  }
-  if(consultarUsuario($user, $password)){
-    $_SESSION['username']=$user;
-  }else{
-    printf('<div class="alert alert-danger"></div>');
-    header("Location: index.php");
-  }
+  if(isset($_SESSION["username"])){
 
-  if(!isset($_SESSION["username"])){
-    header("Location: index.php");
+  }else{
+    if (isset($_POST['usuario'])){
+      $user = $_POST['usuario'];
+    }
+    if (isset($_POST['password'])){
+      $password= $_POST['password']; 
+    }
+    if(consultarUsuario($user, $password)){
+      $_SESSION['username']=$user;
+    }else{
+      printf('<div class="alert alert-danger"></div>');
+      header("Location: index.php");
+    }
   }
 
 ?>
