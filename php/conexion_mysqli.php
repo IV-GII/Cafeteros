@@ -16,7 +16,7 @@
 
 	function consultarUsuario($user, $pass){
 		$mysqli = conectarse(); 
-		if ($resultado = $mysqli->query("SELECT * FROM `usuario` WHERE usuario = '". $user."'")) {
+		if ($resultado = $mysqli->query("SELECT * FROM `usuario` WHERE username = '". $user."'")) {
 		   $vectorResultado = $resultado -> fetch_assoc();
 		   if($vectorResultado == null){
 			echo "No existe usuario";
