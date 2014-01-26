@@ -5,15 +5,18 @@
   require_once "conexion_mysqli.php";
   if (isset($_POST['usuario'])){
     $user = $_POST['usuario'];
-    printf("Hay usuario");
   }
   if (isset($_POST['password'])){
-    printf("Hay usuario");
     $password= $_POST['password']; 
   }
   if(consultarUsuario($user, $password)){
     $_SESSION['username']=$user;
   }else{
+    printf('<div class="alert alert-danger"></div>');
+    header("Location: index.php");
+  }
+
+  if(!isset($_SESSION["username"])){
     header("Location: index.php");
   }
 
