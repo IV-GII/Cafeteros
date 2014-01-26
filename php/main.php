@@ -112,6 +112,8 @@
               require_once "conexion_mysqli.php";
               $lista=consultarMaquina(0);
               printf($lista);
+              $botones= obtenerTablaBotones(0);
+              printf($botones);
             ?>
           </div>
         </div>
