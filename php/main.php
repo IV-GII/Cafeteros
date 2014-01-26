@@ -38,20 +38,6 @@
   </head>
 
   <body>
-<<<<<<< HEAD
-=======
-  <?php
-  define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
-    define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
-    define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
-    define('DB_BASE',getenv('OPENSHIFT_APP_NAME'));
-    define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT')); 
-
-    define('DB_DSN' , 'mysql:dbname='.DB_BASE.';host='.DB_HOST.';port='.DB_PORT.'');
-    define("DB_USUARIO", DB_USER);
-        define("DB_CONTRASENIA", DB_PASS);
-    ?>
->>>>>>> d3db88b59a27a57e38dac6d0c9389964fb05b321
     <nav class="navbar navbar-default" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -87,14 +73,11 @@
 
        <div class= "col-lg-3 col-md-3 col-sm-3 col-xs-12">
         <ul class="nav nav-pills nav-stacked">
-<<<<<<< HEAD
-          <?php
-              require_once "conexion_mysqli.php";
-              consultarCodigosMaquinas();
-          ?>
-=======
-          
->>>>>>> d3db88b59a27a57e38dac6d0c9389964fb05b321
+        <?php
+          ini_set ("display_errors","1" );
+          error_reporting(E_ALL);
+          consultarCodigosMaquinas();
+        ?>
         </ul>
       </div>
 
