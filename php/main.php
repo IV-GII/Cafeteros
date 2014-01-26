@@ -4,15 +4,17 @@
   error_reporting(E_ALL);
   require_once "conexion_mysqli.php";
   if (isset($_POST['usuario']))
+    printf($_POST['usuario']);
     $user = $_POST['usuario'];
   if (isset($_POST['password']))
+    printf($_POST['password']);
     $password= $_POST['password']; 
   if(consultarUsuario($user, $password)){
     $_SESSION['usuario']=$user;
   }else{
     header("Location: index.php"); 
   }
-  
+
 ?>
 
 <!DOCTYPE html>
