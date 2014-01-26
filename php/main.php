@@ -3,6 +3,7 @@
   ini_set ("display_errors","1" );
   error_reporting(E_ALL);
   require_once "conexion_mysqli.php";
+  echo "hola";
   if (isset($_POST['usuario']))
     printf($_POST['usuario']);
     $user = $_POST['usuario'];
@@ -103,7 +104,7 @@
         <div class="panel panel-success">
           <div class="panel-heading">
             <h3 class="panel-title">
-              M&aacute;aquina 0
+              M&aacute;quina 0
             </h3>
           </div>
           <div class="panel-body">
@@ -119,7 +120,7 @@
 
         <div class="panel panel-warning">
           <div class="panel-heading">
-            <h3 class="panel-title">M&aacute;aquina 1</h3>
+            <h3 class="panel-title">M&aacute;quina 1</h3>
           </div>
           <div class="panel-body">
             <?php

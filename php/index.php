@@ -44,7 +44,7 @@
     <div class="container">
       <center><img id= "logo" src="img/logo_tu_cafe_online.png"></center>
       <form class="form-signin" role="form" onsubmit="main.php" method="post">
-        <h2 class="form-signin-heading">Autentificate</h2>
+        <h2 class="form-signin-heading">Autentifíate</h2>
         <input name="usuario" type="text" class="form-control" placeholder="Nombre de Usuario" required autofocus>
         <input name="password" type="password" class="form-control" placeholder="Contraseña" required>
         <label class="checkbox">
