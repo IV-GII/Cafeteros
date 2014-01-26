@@ -3,9 +3,7 @@
   ini_set ("display_errors","1" );
   error_reporting(E_ALL);
   require_once "conexion_mysqli.php";
-  if(isset($_SESSION["username"])){
-
-  }else{
+  if(!isset($_SESSION["username"])){
     if (isset($_POST['usuario'])){
       $user = $_POST['usuario'];
     }
@@ -79,11 +77,17 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> admin<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Cerrar Sesión</a></li>
-          </ul>
-        </li>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <?php printf($_SESSION['username']);?><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+          <li class="divider"></li>
+          <li><a href="#">One more separated link</a></li>
+        </ul>
+      </li>
       </ul>
 
     </div><!-- /.navbar-collapse -->
