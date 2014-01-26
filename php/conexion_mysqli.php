@@ -35,7 +35,7 @@
 		$columnaIzq=""; 
 		if ($resultado = $mysqli->query("SELECT * FROM " . MAQUINAS)) {
 			while ($row = $resultado->fetch_assoc()) {
-				$columnaIzq= '<li><a href="#">M&aacute;quina '.$row["cod_maquina"].'</a></li>'.$columnaIzq;
+				$columnaIzq= $columnaIzq.'<li><a href="#">M&aacute;quina '.$row["cod_maquina"].'</a></li>';
 			}
 			return $columnaIzq;
 		}else{
