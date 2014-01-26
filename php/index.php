@@ -43,10 +43,10 @@
   <body>
     <div class="container">
       <center><img id= "logo" src="img/logo_tu_cafe_online.png"></center>
-      <form class="form-signin" role="form" action="main.php">
+      <form class="form-signin" role="form" action="main.php" method="post">
         <h2 class="form-signin-heading">Autentificate</h2>
-        <input type="text" class="form-control" placeholder="Nombre de Usuario" required autofocus>
-        <input type="password" class="form-control" placeholder="Contraseña" required>
+        <input name="usuario" type="text" class="form-control" placeholder="Nombre de Usuario" required autofocus>
+        <input name="password" type="password" class="form-control" placeholder="Contraseña" required>
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Recordarme
         </label>
