@@ -8,7 +8,9 @@
   if (isset($_POST['password']))
     $password= $_POST['password']; 
   if(consultarUsuario($user, $password)){
-    $_SESSION['usuario']=$user;
+    $_SESSION['username']=$user;
+  }else{
+    header("Location: index.php");
   }
 
 ?>
