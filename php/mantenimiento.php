@@ -1,5 +1,7 @@
 <?php
-
+  session_start();
+  ini_set ("display_errors","1" );
+  error_reporting(E_ALL);
 ?>
 
 <!DOCTYPE html>
@@ -73,9 +75,13 @@
 
       <div class= "col-lg-2 col-md-2 col-sm-2 col-xs-12">
         <ul class="nav nav-pills nav-stacked">
-          <li class="active"><a href="#">Máquina uno COD MAQUINA</a></li>
-          <li><a href="#">Máquina dos COD MAQUINA</a></li>
-          <li><a href="#">Máquina tres COD MAQUINA</a></li>
+          <?php
+            ini_set ("display_errors","1" );
+            error_reporting(E_ALL);
+            require_once "conexion_mysqli.php";
+            $lista=consultarCodigosMaquinas();
+            printf($lista);
+          ?>
         </ul>
       </div>
       

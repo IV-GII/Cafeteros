@@ -14,6 +14,23 @@
 		return $mysqli;		
 	}
 
+	function consultarUsuario($user, $pass){
+		$mysqli = conectarse(); 
+		if ($resultado = $mysqli->query("SELECT * FROM " . TABLA_USUARIO . " WHERE user = '". $user."'")) {
+		   $vectorResultado = $resultado -> fetch_assoc();
+		   if($vectorResultado == null){
+			echo "No existe usuario";
+			}else if($vectorResultado['password']==$pass)
+						return true;
+					else
+						return false;
+		} else{
+			echo "error peticion";
+			printf("Errormessage: %s\n", $mysqli->error);
+		}
+		$mysqli->close();
+	}
+	
 	function consultarMaquina($maquina){
 		$mysqli = conectarse(); 
 		$maquinas=""; 

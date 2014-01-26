@@ -1,5 +1,7 @@
 <?php
   session_start();
+  ini_set ("display_errors","1" );
+  error_reporting(E_ALL);
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +89,24 @@
       <div class= "col-lg-10 col-md-10 col-sm-10 col-xs-12">
         <div class="panel panel-success">
           <div class="panel-heading">
-            <h3 class="panel-title">Código Máquina 1</h3>
+            <h3 class="panel-title">
+              M&aacute;aquina 0
+            </h3>
+          </div>
+          <div class="panel-body">
+            <?php
+              ini_set ("display_errors","1" );
+              error_reporting(E_ALL);
+              require_once "conexion_mysqli.php";
+              $lista=consultarMaquina(0);
+              printf($lista);
+            ?>
+          </div>
+        </div>
+
+        <div class="panel panel-warning">
+          <div class="panel-heading">
+            <h3 class="panel-title">M&aacute;aquina 1</h3>
           </div>
           <div class="panel-body">
             <?php
@@ -98,26 +117,21 @@
               printf($lista);
             ?>
           </div>
-        </div>
-
-        <div class="panel panel-warning">
-          <div class="panel-heading">
-            <h3 class="panel-title">Código Máquina 2</h3>
-          </div>
-          <div class="panel-body">
-            Aquí segunda máquina de café.
-            En esta máquina hay algo que revisar. AMARILLO.
-          </div>
 
         </div>
 
         <div class="panel panel-danger">
           <div class="panel-heading">
-            <h3 class="panel-title">Código Máquina 3</h3>
+            <h3 class="panel-title">Máquina 3</h3>
           </div>
           <div class="panel-body">
-            Aquí tercera máquina de café.
-            En esta máquina hay algo mal. ROJO.
+            <?php
+              ini_set ("display_errors","1" );
+              error_reporting(E_ALL);
+              require_once "conexion_mysqli.php";
+              $lista=consultarMaquina(1);
+              printf($lista);
+            ?>
           </div>
 
         </div>
