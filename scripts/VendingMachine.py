@@ -130,6 +130,13 @@ class VendingMachine:
         return self.identifiers
 
     def saveToFile(self):
+        """
+        Metodo que graba la informacion de la maquina
+        en un fichero JSON. Dicho fichero JSON es identificado
+        por el `año+mes+día-hora+minuto+segundos`.json.
+        Dicho fichero se usa para insertar los datos en las bases
+        de datos de Openshift
+        """
         date = datetime.datetime.now()
         with open(str(date.year) + str(date.month) + str(date.day) + "-" + str(
                   date.time().hour) + str(date.time().minute) + str(date.time().second) + ".json", "w") as fo:
