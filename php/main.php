@@ -12,6 +12,8 @@
     $password= $_POST['password']; 
   if(consultarUsuario($user, $password)){
     $_SESSION['usuario']=$user;
+  }else{
+    header("Location: index.php"); 
   }
 
 ?>
