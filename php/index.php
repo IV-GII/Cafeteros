@@ -1,5 +1,8 @@
 <?php
   session_start();
+  ini_set ("display_errors","1" );
+  error_reporting(E_ALL);
+  require_once "conexion_mysqli.php";
 ?>
 
 <!DOCTYPE html>
@@ -40,8 +43,8 @@
   <body>
     <div class="container">
       <center><img id= "logo" src="img/logo_tu_cafe_online.png"></center>
-      <form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Autentificárse</h2>
+      <form class="form-signin" role="form" action="main.php">
+        <h2 class="form-signin-heading">Autentificate</h2>
         <input type="text" class="form-control" placeholder="Nombre de Usuario" required autofocus>
         <input type="password" class="form-control" placeholder="Contraseña" required>
         <label class="checkbox">

@@ -2,6 +2,17 @@
   session_start();
   ini_set ("display_errors","1" );
   error_reporting(E_ALL);
+  require_once "conexion_mysqli.php";
+  if (isset($_POST['usuario']))
+    $user = $_POST['usuario'];
+  if (isset($_POST['password']))
+    $password= $_POST['password']; 
+  if(consultarUsuario($user, $password)){
+    $_SESSION['usuario']=$user;
+  }else{
+    header("Location: index.php"); 
+  }
+  
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +72,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nombre Usuario<b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <?php printf($_SESSION['usuario']); ?><b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="#">Cerrar Sesión</a></li>
           </ul>
