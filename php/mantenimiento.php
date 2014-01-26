@@ -71,7 +71,7 @@
   <div id="contenedor_margen">
     <div class="row">
 
-      <div class= "col-lg-3 col-md-3 col-sm-3 col-xs-12">
+      <div class= "col-lg-2 col-md-2 col-sm-2 col-xs-12">
         <ul class="nav nav-pills nav-stacked">
           <li class="active"><a href="#">Máquina uno COD MAQUINA</a></li>
           <li><a href="#">Máquina dos COD MAQUINA</a></li>
@@ -80,19 +80,21 @@
       </div>
       
 
-      <div class= "col-lg-9 col-md-9 col-sm-9 col-xs-12">
+      <div class= "col-lg-10 col-md-10 col-sm-10 col-xs-12">
         <div class="panel panel-success">
           <div class="panel-heading">
             <h3 class="panel-title">Código Máquina 1</h3>
           </div>
           <div class="panel-body">
-            <button type="button" class="btn btn-default btn-lg">
-              <span class="glyphicon glyphicon-refresh"></span> Reiniciar máquina
-            </button>
+            <center>
+              <button type="button" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-refresh"></span> Reiniciar máquina
+              </button>
 
-            <button type="button" class="btn btn-default btn-lg">
-              <span class="glyphicon glyphicon-tree-deciduous"></span> Limpieza máquina
-            </button>
+              <button type="button" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-tree-deciduous"></span> Limpieza máquina
+              </button>
+            </center>
           </div>
         </div>
 
