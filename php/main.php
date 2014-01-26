@@ -13,9 +13,10 @@
   }
   if(consultarUsuario($user, $password)){
     $_SESSION['username']=$user;
-  }else{
-    header("Location: index.php");
   }
+  // }else{
+  //   header("Location: index.php");
+  // }
 
 ?>
 
