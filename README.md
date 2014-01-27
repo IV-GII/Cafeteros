@@ -376,6 +376,7 @@ Esto graba todos los datos procesado en dicho día en las bases de datos.
 Bibliografía
 ============
 [Como enlazar mensajes a issues][1]
+
 [Como conectarse de manera remota a las bases de datos en Openshift][2]
 
 [1]: http://stackoverflow.com/questions/1687262/link-to-github-issue-number-with-commit-message
