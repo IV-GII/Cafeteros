@@ -68,12 +68,310 @@ la parte de sofware desarrolla una interfaz web y ademas de algunos scripts para
 La parte de hardware usa una raspberry pi usando la librería GPIO, mediante un script en python activamos la secuencia de los botones de la maquina, otro script pone un puerto serial en escucha para recibir la entrada de datos y escribirla en un fichero plano.
 
 
+###Parsing y Conexión Remota con las bases de datos en OpenShift
+
+En esta sección se denota el proceso de coger el fichero que saca
+la máquina de cafe, procesar dicho fichero para que la información
+pueda ser mandada a las bases de datos de Openshift. Este último proceso
+se hace remotamente y de manera segura.
+
+El fichero que hay que procesar tiene información sobre:
+  - Nombre del Fabricante
+  - Modelo
+  - Revision del fireware de la máquina
+  - Codigo de la máquina
+  - Número de Impresion
+  - Contador de todos los cafes del inicio
+  - Los diferentes cafes con la informacion de la venta
+  que corresponde al cafe que se ha vendido
+  - La maquina emite 8 precios diferentes.
+  - Averias de la maquina
+
+El objetivo a cumplir era estructurar dicha información de una manera que
+si se ve en un futuro se pueda manipular más facilmente, y además que dicha
+información se vaya alojando en la aplicación web para que pueda ser visualizada
+por cualquier persona que necesite administrar las máquinas de cafe.
+
+El primer objetivo que se ha planteado se ha tratado de cumplir estructurando
+los datos proporcionados de dichos fichero en forma de un fichero json. JSON
+es una alternativo a XML para el intercambio de información. Son estructuras fácil
+de entender y manejar.
+
+A continuación podemos el resultado de transformar la información proporcionada
+de la máquina en un fichero JSON que esta denotado por el fecha y el tiempo en
+el cual se ha hecho el análisis.
+
+
+
+```json
+{
+    "Codigo de la Maquina": "0001",
+    "Contador de todos los cafes del inicio del tiempo": "1224",
+    "Errores": [
+        {
+            "1": "0"
+        },
+        {
+            "2": "0"
+        },
+        {
+            "3": "5"
+        },
+        {
+            "4": "0"
+        },
+        {
+            "5": "3"
+        },
+        {
+            "6": "1"
+        },
+        {
+            "7": "0"
+        },
+        {
+            "8": "0"
+        },
+        {
+            "9": "0"
+        },
+        {
+            "10": "7"
+        },
+        {
+            "11": "0"
+        },
+        {
+            "12": "0"
+        },
+        {
+            "13": "0"
+        },
+        {
+            "14": "0"
+        },
+        {
+            "15": "0"
+        }
+    ],
+    "Modelo": "D.A. COLIBRI",
+    "Nombre de Fabricante": "NECTA VENDING",
+    "Numero de Impresion": "17",
+    "Precio": [
+        {
+            "1": "1217"
+        },
+        {
+            "2": "0"
+        },
+        {
+            "3": "0"
+        },
+        {
+            "4": "0"
+        },
+        {
+            "5": "0"
+        },
+        {
+            "6": "0"
+        },
+        {
+            "7": "0"
+        },
+        {
+            "8": "0"
+        }
+    ],
+    "Revision del Firmware": "Rev. 1.9 LVZ",
+    "Tecla": [
+        {
+            "1": [
+                "0",
+                "0",
+                "0"
+            ]
+        },
+        {
+            "2": [
+                "32",
+                "4",
+                "0"
+            ]
+        },
+        {
+            "3": [
+                "80",
+                "0",
+                "0"
+            ]
+        },
+        {
+            "4": [
+                "38",
+                "0",
+                "0"
+            ]
+        },
+        {
+            "5": [
+                "0",
+                "0",
+                "0"
+            ]
+        },
+        {
+            "6": [
+                "270",
+                "1",
+                "0"
+            ]
+        },
+        {
+            "7": [
+                "282",
+                "3",
+                "0"
+            ]
+        },
+        {
+            "8": [
+                "506",
+                "1",
+                "0"
+            ]
+        }
+    ],
+    "Vaso f.n.": "1217",
+    "Vaso mant.": "0"
+}
+```
+
+
+Para crear dicha estructura he usado Python, especificamente su modulo de json
+para poder crear el fichero JSON. Lo primero que se ha hecho es crear un objeto
+[`VendingMachine`][https://github.com/IV-GII/Cafeteros/blob/master/scripts/VendingMachine.py]
+que encapsula la estructura y toda la información relacionada con la máquina de cafe que se esta tratando.
+
+Para parsear el fichero y guardar la información relevante he usado el modulo de
+expresiones regulares de python.
+
+El script que hace todo el procedimiento es el siguiente:
+
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import sys
+from VendingMachine import *
+
+
+if __name__ == '__main__':
+    try:
+        coffeeMachine = VendingMachine(sys.argv[1])
+        coffeeMachine.saveToFile()
+    except IndexError:
+        print("Se requiere un argumento de linea de comando")
+```
+
+Se le pasa un argumento por linea. Dicho argumento es el fichero a parsear.
+Cuando finaliza de procesar guarda la información en un fichero JSON.
+Además que se va guardando información sobre cuando se hace el parseo guardando
+información sobre la fecha y el tiempo en un fichero `tiempo.txt`.
+
+Ahora llegamos al segundo objetivo que es la parte de transferir la información
+remotamente desde el raspberry pi hasta las bases de datos de Openshift, para que
+se pueda visualizar desde la aplicación web.
+
+La única dependencia que se tiene que tener en cuenta es el modulo
+para conectar python a MySQL. Dicho modulo se llama `MySQLdb`. Esto
+se previente en el provisionamiento con ansible.
+
+En dicho programa se tiene en cuenta cuatro tablas.
+  - La tabla de las maquina, que diferencia las máquinas
+  - El producto, que tiene en cuenta la máquina con sus diversos cafes
+  - El precio que tiene la máquina
+  - Los errores que esta ligado con la máquina
+
+A continuación se puede ver las cuatro funciones creadas para insertar en las
+bases de datos.
+
+```python
+def insertMachineInfo(id_maquina, model, firmware, fabricante, n_cafes, vasos_totales, vasos_mantenido, n_impresion):
+    db.execute(
+        """
+        INSERT INTO maquinas VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+        """,
+        (id_maquina, model, firmware, fabricante, n_cafes, vasos_totales, vasos_mantenido, n_impresion))
+
+
+def insertProduct(id_maquina, boton, pago, gratis, test):
+    db.execute(
+        """
+        INSERT INTO Producto VALUES (%s, %s, %s, %s, %s)
+        """,
+        (id_maquina, boton, pago, gratis, test))
+
+
+def insertPrice(id_maquina, precio1, precio2, precio3, precio4, precio5, precio6, precio7, precio8):
+    db.execute(
+        """
+        INSERT INTO precio VALUES (%s,%s, %s, %s, %s, %s, %s, %s, %s)
+        """,
+        (id_maquina, precio1, precio2, precio3,
+         precio4, precio5, precio6, precio7, precio8)
+    )
+
+
+def insertError(id_maquina, er1, er2, er3, er4, er5, er6, er7, er8, er9, er10, er11, er12, er13, er14, er15):
+    db.execute(
+        """
+        INSERT INTO errores VALUES (%s, %s,%s, %s,%s, %s,%s, %s,%s, %s,%s, %s,%s, %s,%s, %s)
+        """,
+        (id_maquina, er1, er2, er3, er4, er5, er6, er7, er8, er9, er10, er11, er12, er13, er14, er15))
+
+```
+
+####Importante
+
+Para poder hacer la conexión con las bases de datos en Openshift se tiene que usar
+la funcionalidad que proporciona el cliente de Openshift **(rhc)** con port-forwarding.
+Esto significa que el raspberry pi podra transferir todas la información a openshift
+usando el host de localhost y usando un puerto dado que transfiere toda la información
+a las bases de datos MySQL.
+
+El script que gestiona la conexión e inserción en las bases de datos se puede
+visualizar [aquí](https://github.com/IV-GII/Cafeteros/blob/master/scripts/databaseconn.py)
 
 
 Ejecucion del programa:
-- python3 fileparser.py captura\ 20140120\ iznalloz.txt
-- python3 fileparser.py captura\ 20140121\ tecnoszubia.txt
-- python3 fileparser.py captura\ 20140124\ cocoroco.txt
+A continuación podemos ver como se hace para procesar los ficheros y mandar la información a 
+las bases de datos de OpenShift.
+
+Primero se han parseado tres fichero proporcionados, con los siguientes comandos:
+
+```bash
+python3 fileparser.py captura\ 20140120\ iznalloz.txt
+python3 fileparser.py captura\ 20140121\ tecnoszubia.txt
+python3 fileparser.py captura\ 20140124\ cocoroco.txt
+```
+
+Segundo se ha conectado con las bases de datos con los siguientes comandos, donde
+primero tiene que hacer el port-forwarding para conectarse y mandar la información
+
+```bash
+rhc port-forward -a cafeteros
+```
+
+Se termina la secuencia usando el siguiente comando:
+
+```bash
+python databaseconn.py
+```
+
+Esto graba todos los datos procesado en dicho día en las bases de datos.
+
+
 
 Bibliografía
 ============
