@@ -78,6 +78,7 @@ Ejecucion del programa:
 Bibliografía
 ============
 [Como enlazar mensajes a issues][1]
+[Como conectarse de manera remota a las bases de datos en Openshift][2]
 
 [1]: http://stackoverflow.com/questions/1687262/link-to-github-issue-number-with-commit-message
-
+[2]: https://www.openshift.com/blogs/getting-started-with-port-forwarding-on-openshift
