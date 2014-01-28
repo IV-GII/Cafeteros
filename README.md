@@ -75,58 +75,58 @@ En esta sección nos centramos en la creación de dos scripts:
 
   
 
-```import time
-  import RPi.GPIO as GPIO 
-  
-  
-  ## Configuración de los pines
-  
-  # PIN 7 BOTON 9
-  # PIN 11 BOTON 6
-  # PIN 15 BOTON 5
-  
-  boton9 = 7
-  boton6 = 11
-  boton5 = 15
-  
-  GPIO.setup(7, GPIO.OUT) # 9
-  GPIO.setup(11, GPIO.OUT) # 6
-  GPIO.setup(15, GPIO.OUT) # 5
-  
-  ## Inicio de la secuencia
-  GPIO.output(boton9,True)
-  time.sleep(0.5)
-  GPIO.output(boton9,False)
-  
-  time.sleep(3) # Pausa entre pulso
-  
-  GPIO.output(boton6,True)
-  time.sleep(0.5)
-  GPIO.output(boton6,False)
-  
-  time.sleep(3) # Pausa entre pulso
-  
-  GPIO.output(boton6,True)
-  time.sleep(0.5)
-  GPIO.output(boton6,False)
-  
-  time.sleep(2) # Pausa entre pulso
-  
-  GPIO.output(boton5,True)
-  time.sleep(0.5)
-  GPIO.output(boton5,False)
-  
-  time.sleep(2) # Pausa entre pulso
-  
-  GPIO.output(boton6,True)
-  time.sleep(0.5)
-  GPIO.output(boton6,False)
-  
-  time.sleep(2) # Pausa entre pulso
-  
-  GPIO.output(boton6,True)
-  time.sleep(0.5)
-  GPIO.output(boton6,False)```
+      import time
+      import RPi.GPIO as GPIO 
+      
+      
+      ## Configuración de los pines
+      
+      # PIN 7 BOTON 9
+      # PIN 11 BOTON 6
+      # PIN 15 BOTON 5
+      
+      boton9 = 7
+      boton6 = 11
+      boton5 = 15
+      
+      GPIO.setup(7, GPIO.OUT) # 9
+      GPIO.setup(11, GPIO.OUT) # 6
+      GPIO.setup(15, GPIO.OUT) # 5
+      
+      ## Inicio de la secuencia
+      GPIO.output(boton9,True)
+      time.sleep(0.5)
+      GPIO.output(boton9,False)
+      
+      time.sleep(3) # Pausa entre pulso
+      
+      GPIO.output(boton6,True)
+      time.sleep(0.5)
+      GPIO.output(boton6,False)
+      
+      time.sleep(3) # Pausa entre pulso
+      
+      GPIO.output(boton6,True)
+      time.sleep(0.5)
+      GPIO.output(boton6,False)
+      
+      time.sleep(2) # Pausa entre pulso
+      
+      GPIO.output(boton5,True)
+      time.sleep(0.5)
+      GPIO.output(boton5,False)
+      
+      time.sleep(2) # Pausa entre pulso
+      
+      GPIO.output(boton6,True)
+      time.sleep(0.5)
+      GPIO.output(boton6,False)
+      
+      time.sleep(2) # Pausa entre pulso
+      
+      GPIO.output(boton6,True)
+      time.sleep(0.5)
+      GPIO.output(boton6,False)
 
 
 
@@ -134,27 +134,28 @@ En esta sección nos centramos en la creación de dos scripts:
   En la tarea de lectura desde la máquina encontramos un problema, la raspberry pi no era capaz de leer y escribir en el fichero todas las líneas que mandaba la máquina de café, lo que hacía que al fichero con las estadísticas le faltasen algunas líneas, por lo que intentamos dos alternativas, la primera de ellas fue configurar la escucha del puerto serie con la configuración que el dueño de la máquina utilizaba normalmente (líneas comentadas), y la otra alternativa fue leer directamente desde el ttyUSB0. En ambos casos nos encontramos con la falta de líneas completas en el fichero. Quedando esta sección como pendiente de mejora para el futuro.
   A continuación podemos ver el script:
 
-´´´import serial 
-import io
-#serial = serial.Serial("/dev/ttyUSB0", timeout=10,baudrate=9600, bytesize=8, parity='N', stopbits=1, xonxoff=1)
-f = open("status.txt", "w")
-serial=open("/dev/ttyUSB0","rw")
 
-#string=""
-while True:
-#uses the serial port
-        data = serial.read()
-#string+=data
-#print data
-        f.write(data)
-        f.flush()
-#print("Contador: "+str(cont))
-#print (string)
- 
-#f.write(string) 
-f.close()
-
-#exit()´´´
+      import serial 
+      import io
+      #serial = serial.Serial("/dev/ttyUSB0", timeout=10,baudrate=9600, bytesize=8, parity='N', stopbits=1, xonxoff=1)
+      f = open("status.txt", "w")
+      serial=open("/dev/ttyUSB0","rw")
+      
+      #string=""
+      while True:
+      #uses the serial port
+              data = serial.read()
+      #string+=data
+      #print data
+              f.write(data)
+              f.flush()
+      #print("Contador: "+str(cont))
+      #print (string)
+       
+      #f.write(string) 
+      f.close()
+      
+      #exit()
 
 
 ###Parsing y Conexión Remota con las bases de datos en OpenShift
