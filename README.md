@@ -464,7 +464,7 @@ Esto graba todos los datos procesado en dicho día en las bases de datos.
 
 Características que necesitamos:
   - Necesitamos una interfaz web sencilla. 
-  - No tenemos que olvidar que la aplicación web que estamos realizando es una herramienta de trabajo. Así que tiene que ser muy sencilla.  
+  - No tenemos que olvidar que la aplicación web que estamos realizando es una herramienta de trabajo. Así que tiene que ser comoda de usar.  
   - Necesitamos mostrar el máximo de información, pero de la forma mas clara posible.  
   - Nuestra aplicación web debe tener una interfaz responsiva. Es decir, tiene que poder ser visualizada fácilmente desde los diferentes dispositivos que tenemos. Es decir tablets, Smartphone, ordenadores...  
 
