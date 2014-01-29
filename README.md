@@ -476,6 +476,7 @@ Lo primero que vamos a necesitar es una página de login. Pues la información q
 
 Una vez que entramos a nuestra interfaz web, nos mostrará la página principal, en la que podemos ver directamente la información sobre las máquinas de manera rápida. 
 La página esta distribuida en 2 columnas. La columna de la izquierda consiste en un índice de las máquinas sobre las que podemos ver la información. Al pulsar sobre la máquina accederemos directamente a la parte de la web donde esta la información de esta.  
+  
 En la columna de la derecha encontramos la parte principal de la página. La información.  
 Cada recuadro grande representa una máquina con su información (Información general, pulsación de teclas...). Para facilitar el mantenimiento, estos recuadros cambiarán de color. Es decir. El color del recuadro nos da información del estado de la máquina.  
 
@@ -487,7 +488,7 @@ Cada recuadro grande representa una máquina con su información (Información g
 
 En futuras actualizaciones se mostrará la información de manera más visual. Por ejemplo, el conteo de pulsación de botones con una botonera...
 
-Pasamos finalmente a la última parte de la aplicación web. El mantenimiento. Además de controlar el estado de los vasos, café, leche... también existe la posibilidad de que la maquina se atasque, que necesitemos que esta se limpie sola (Este tipo de máquina tiene esa función). Para que mayor comodidad se ponen estas opciones en un apartado diferente. Para que sea mas accesible. 
+Pasamos finalmente a la última parte de la aplicación web. El mantenimiento. Además de controlar el estado de los vasos, café, leche... también existe la posibilidad de que la máquina se atasque, que necesitemos que esta se limpie sola (Este tipo de máquina tiene esa función). Para que mayor comodidad se ponen estas opciones en un apartado diferente. 
 En esta parte de la pagina también se mantiene el código de color en los recuadros, pues nos será útil para ver que máquina tiene el error (Que se puede solucionar desde esta página).  
 
 ![mantenimiento](https://github.com/IV-GII/Cafeteros/blob/master/img/mantenimiento.png?raw=true)  
