@@ -462,25 +462,30 @@ Esto graba todos los datos procesado en dicho día en las bases de datos.
 
 ##Interfaz Web
 
-Necesitamos una interfaz web sencilla. No tenemos que olvidar que la aplicación web que estamos realizando es una herramienta de trabajo. Así que tiene que ser muy sencilla.  
-Necesitamos mostrar el máximo de información, pero de la forma mas clara posible.  
-También necesitamos que nuestra aplicación web tenga una interfaz responsiva. Es decir, tiene que poder ser visualizada fácilmente desde los diferentes dispositivos que tenemos. Es decir tablets, Smartphone, ordenadores...  
+Características que necesitamos:
+  - Necesitamos una interfaz web sencilla. 
+  - No tenemos que olvidar que la aplicación web que estamos realizando es una herramienta de trabajo. Así que tiene que ser muy sencilla.  
+  - Necesitamos mostrar el máximo de información, pero de la forma mas clara posible.  
+  - Nuestra aplicación web debe tener una interfaz responsiva. Es decir, tiene que poder ser visualizada fácilmente desde los diferentes dispositivos que tenemos. Es decir tablets, Smartphone, ordenadores...  
 
-Para facilitar esta tarea, vamos a usar Bootstrap. Lo primero que vamos a necesitar es una página de login. Pues la información que vamos a obtener de las diferentes máquinas solo debe ser vista por aquellos que están autorizados a verla.  
+Para facilitar esta tarea, vamos a usar Bootstrap, php y mysqli para la conexion con la base de datos. 
+
+Lo primero que vamos a necesitar es una página de login. Pues la información que vamos a obtener de las diferentes máquinas solo debe ser vista por aquellos que están autorizados a verla.  
 
 ![login](https://github.com/IV-GII/Cafeteros/blob/master/img/login.png?raw=true)
 
 Una vez que entramos a nuestra interfaz web, nos mostrará la página principal, en la que podemos ver directamente la información sobre las máquinas de manera rápida. 
 La página esta distribuida en 2 columnas. La columna de la izquierda consiste en un índice de las máquinas sobre las que podemos ver la información. Al pulsar sobre la máquina accederemos directamente a la parte de la web donde esta la información de esta.  
-En la columna de la derecha encontramos la parte principal de la página. La información. Cada recuadro grande representa una máquina con su información (Información general, pulsación de teclas...). Para facilitar el mantenimiento, estos recuadros cambiarán de color. Es decir. El color del recuadro nos da información del estado de la máquina.  
+En la columna de la derecha encontramos la parte principal de la página. La información.  
+Cada recuadro grande representa una máquina con su información (Información general, pulsación de teclas...). Para facilitar el mantenimiento, estos recuadros cambiarán de color. Es decir. El color del recuadro nos da información del estado de la máquina.  
 
-Verde: El estado de la máquina es bueno. Tiene suficiente café, vasos...
-Amarillo: Quiere decir que ha pasado alguno de los límites. Y que en poco tiempo le va a faltar algo.
-Rojo: La máquina presenta algún error, algo se ha gastado...  
+  * Verde: El estado de la máquina es bueno. Tiene suficiente café, vasos...
+  * Amarillo: Quiere decir que ha pasado alguno de los límites. Y que en poco tiempo le va a faltar algo.
+  * Rojo: La máquina presenta algún error, algo se ha gastado...  
 
 ![main](https://github.com/IV-GII/Cafeteros/blob/master/img/main.png?raw=true)
 
-En futuras actualizaciones se mostrará la información de manera mas visual. Por ejemplo, el conteo de pulsación de botones con una botonera...
+En futuras actualizaciones se mostrará la información de manera más visual. Por ejemplo, el conteo de pulsación de botones con una botonera...
 
 Pasamos finalmente a la última parte de la aplicación web. El mantenimiento. Además de controlar el estado de los vasos, café, leche... también existe la posibilidad de que la maquina se atasque, que necesitemos que esta se limpie sola (Este tipo de máquina tiene esa función). Para que mayor comodidad se ponen estas opciones en un apartado diferente. Para que sea mas accesible. 
 En esta parte de la pagina también se mantiene el código de color en los recuadros, pues nos será útil para ver que máquina tiene el error (Que se puede solucionar desde esta página).  
