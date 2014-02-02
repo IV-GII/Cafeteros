@@ -493,7 +493,26 @@ En esta parte de la pagina también se mantiene el código de color en los recua
 
 ![mantenimiento](https://github.com/IV-GII/Cafeteros/blob/master/img/mantenimiento.png?raw=true)  
 
+Futuro de nuestro proyecto
+==========================
 
+El futuro más inmediato de nuestro proyecto, es que este funcione al 100%. Es decir, no nos basta solo con el prototipo. Además necesitamos que funciones correctamente para que sea una herramienta de trabajo usable. 
+  - La tarea principal es acabar es la conexión hardware de la cafetera a la raspberry pi. Evidentemente no sólo de la cafetera con la que hemos empezado a funcionar. Si no con todas las del cliente. Para tener una estructura clara sobre la que obtener los datos, tratarlos y mostrarlos en la aplicación web. 
+  - A nivel de hardware:
+    * diseñar una placa y hacer las correcciones correctamente. De manera que se simplifique la instación en diferentes cafeteras.
+    * Utilizar los pines del puerto de serie y no un conversor. 
+    * Añadir relé para poder resetear la máquina desde la raspberry pi.
+    *Integrar la circuitería dentro de la máquina. 
+  - A nivel software podemos añadir más caracteristicas, que incluirian en la aplicación web no solo al administrador de las máquinas, si no tambien a los clientes:
+    * Administrador: Enviar odenes no solo desde el cron (Obtener datos en el momento, resetear máquina, generar estadísticas, limpiar máquina...)
+    * Cliente: 
+      + Interfaz web de la máquina (Pedir cafes desde la mesa, para que cuando llegues a la maquina ya este preparado).
+      + Gestion de pagos por paypal.
+      + Gestión de cuenta de cliente: Bonificación por uso...
+
+  - Y finalmente, seguridad de la aplicación web. Es necesaria, si no queremos que cualquiera pueda atacar nuestro sistema.
+
+  
 Bibliografía
 ============
 [Como enlazar mensajes a issues][1]
