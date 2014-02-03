@@ -124,13 +124,13 @@ ansible-playbook scripts/raspiPlaybook.yml -i scripts/ansibleHosts -u pi
 
 Dicho script descarga e instala los paquete necesarios para usar Ansible, envía la clave SSH necesaria para lanzar los scripts de aprovisionamiento y por último lanza el PlayBook. En la siguiente captura se muestra su funcionamiento sobre una máquina virtual en Azure usada para pruebas:
 
-![captura](../img/ansible-funcionando.png)
+![captura](img/ansible-funcionando.png)
 
 #### Resto de la configuración
 
 Nos hubiera gustado realizar el despliegue completo usando Ansible, pero ésto no ha sido posible debido a que no es posible interactuar con la máquina remota mientras se ejecuta el Playbook. Por ejemplo, necesitamos configurar el gestor de OpenShift *rhc* para que enlace el sistema con la aplicación desplegada en el SaaS:
 
-![captura](../img/rhc-setup.png)
+![captura](img/rhc-setup.png)
 
 El conjunto de pasos necesarios que hay que ejecutar mediante conexión física o remota con la placa son:
 
