@@ -18,17 +18,8 @@
     - pip: name=pyserial
     - apt: pkg=rubygems
     - gem: name=rhc
-    ## GENERAR LLAVES SSH Y EXPORTARLAS
-    #- name: Generar llaves ssh
-    #  command: ssh-keygen
-    - name: Ejecutar configuración de openshift
-      command: rhc setup
-    - name: Exportar llaves a cliente openshift
-      command: rhc sshkey-add raspi /home/pi/.ssh/id_rsa.pub
-    - name: Hacer port-forwarding para conectar a openshift
-      command: rhc port-forward -a cafeteros &
     ## DESCARGAR EL PROYECTO
-    - git: repo=ssh://git@github.com:IV-GII/Cafeteros.git dest=/home/pi/
+    - git: repo=https://github.com/IV-GII/Cafeteros.git dest=/home/pi/Cafeteros/
     ## AÑADIR TAREAS AL CRON
     # Eliminar trabajos previos marcados como "an old job"
     - cron: name="an old job" state=absent

@@ -67,6 +67,78 @@ la parte de sofware desarrolla una interfaz web y ademas de algunos scripts para
 
 La parte de hardware usa una raspberry pi usando la librería GPIO, mediante un script en python activamos la secuencia de los botones de la maquina, otro script pone un puerto serial en escucha para recibir la entrada de datos y escribirla en un fichero plano.
 
+
+### Aprovisionamiento
+
+**Importante: durante la fase de desarrollo del proceso se le asignó la dirección IP 192.168.1.65 a la placa Raspberry Pi, es por ello que en los siguientes scripts esa es la dirección utilizada.**
+
+Para facilitar la instalación de las dependencias en la Raspberry Pi hemos elaborado el siguiente *Playbook* usando [Ansible](http://www.ansible.com/home):
+
+```yaml
+---
+- hosts: all 
+  sudo: yes 
+  tasks:
+    ## MÓDULO DE Rpi.GPIO
+    - name: Descargar Rpi.GPIO
+      command: wget http://pypi.python.org/packages/source/R/RPi.GPIO/RPi.GPIO-0.1.0.tar.gz
+    - name: Descomprimir
+      command: tar zxf RPi.GPIO-0.1.0.tar.gz
+    - name: Acceder al directorio
+      raw: rm -rf RPi.GPIO-0.1.0.tar.gz;cd RPi.GPIO-0.1.0
+    - name: Instalar el módulo
+      raw: cd RPi.GPIO-0.1.0;sudo python setup.py install
+    ## INSTALAR DEPENDENCIAS
+    - apt: pkg=python-pip
+    - apt: pkg=mysql-server
+    - apt: name=python-mysqldb
+    - pip: name=pyserial
+    - apt: pkg=rubygems
+    - gem: name=rhc
+    ## DESCARGAR EL PROYECTO
+    - git: repo=https://github.com/IV-GII/Cafeteros.git dest=/home/pi/Cafeteros/
+    ## AÑADIR TAREAS AL CRON
+    # Eliminar trabajos previos marcados como "an old job"
+    - cron: name="an old job" state=absent
+    # Añadir las tareas al cron:
+    - cron: name="Empezar a leer del puerto serie" day="*" hour="3" minute="0" job="python /home/pi/Cafeteros/scripts/generateStatistics.py"
+    - cron: name="Ejecutar secuencia de botones" day="*" hour="3" minute="1" job="python /home/pi/Cafeteros/scripts/secuenciaBotones.py"
+    - cron: name="Parsear archivo generado" day="*" hour="3" minute="5" job="python /home/pi/Cafeteros/scripts/fileparser.py status.txt"
+```
+
+En dicho guión se observan distintas formas de instalar paquetes de forma remota: tanto descargando, descomprimiendo y ejecutando el archivo instalador como usando las órdenes propias de Ansible. También se muestra cómo descargar un proyecto desde un sistema controlador de versiones como GitHub o añadir distintas tareas al cron. Respecto a esto último se han fijado las horas de ejecución en función del orden requerido para los scripts.
+
+Para facilitar su ejecución podemos lanzar el siguiente script en la máquina desde la que queremos lanzar el *Playbook*:
+
+```sh
+sudo pip install paramiko PyYAML jinja2 httplib2 ansible
+sudo apt-get install -y ssh-copy-id
+ssh-copy-id -i ~/.ssh/id_rsa.pub pi@192.168.1.65
+# Descargar proyecto cafeteros y archivo con el host
+cd ~
+git clone git@github.com:IV-GII/Cafeteros.git
+cd Cafeteros
+#Provisionar la máquina
+ansible-playbook scripts/raspiPlaybook.yml -i scripts/ansibleHosts -u pi
+```
+
+Dicho script descarga e instala los paquete necesarios para usar Ansible, envía la clave SSH necesaria para lanzar los scripts de aprovisionamiento y por último lanza el PlayBook. En la siguiente captura se muestra su funcionamiento sobre una máquina virtual en Azure usada para pruebas:
+
+![captura](../img/ansible-funcionando.png)
+
+#### Resto de la configuración
+
+Nos hubiera gustado realizar el despliegue completo usando Ansible, pero ésto no ha sido posible debido a que no es posible interactuar con la máquina remota mientras se ejecuta el Playbook. Por ejemplo, necesitamos configurar el gestor de OpenShift *rhc* para que enlace el sistema con la aplicación desplegada en el SaaS:
+
+![captura](../img/rhc-setup.png)
+
+El conjunto de pasos necesarios que hay que ejecutar mediante conexión física o remota con la placa son:
+
+- Generar las llaves SSH mediante `ssh-keygen`
+- Configurar OpenShift mediante `rhc setup`
+- Exportar las llaves SSH a OpenShift, para ello ejecutamos `rhc sshkey-add raspi /home/pi/.ssh/id_rsa.pub`
+- Establecer el port-forwarding necesario para la interacción con la base de datos alojada en OpenShift, necesitamos ejecutar `rhc port-forward -a cafeteros &` una vez configurada la aplicación.
+
 ###Programación Raspberry pi
 
 En esta sección nos centramos en la creación de dos scripts:
