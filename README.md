@@ -339,7 +339,7 @@ el cual se ha hecho el análisis.
 
 Para crear dicha estructura he usado Python, especificamente su modulo de json
 para poder crear el fichero JSON. Lo primero que se ha hecho es crear un objeto
-[`VendingMachine`][https://github.com/IV-GII/Cafeteros/blob/master/scripts/VendingMachine.py]
+[`VendingMachine`](https://github.com/IV-GII/Cafeteros/blob/master/scripts/VendingMachine.py)
 que encapsula la estructura y toda la información relacionada con la máquina de cafe que se esta tratando.
 
 Para parsear el fichero y guardar la información relevante he usado el modulo de
